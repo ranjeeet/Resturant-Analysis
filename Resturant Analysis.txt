@@ -15,9 +15,9 @@ from matplotlib import pyplot as plt
 logging.basicConfig(level=logging.WARNING)2
 logger = logging.getLogger(__name__)
 
-logger.warning("this is warning")
-logger.info("this is info")
-logger.debug("this is debug")"""
+logger.warning("Warning!")
+logger.info("Information")
+logger.debug("Debugging")"""
 
 
 def speak(audioString):
@@ -42,8 +42,8 @@ def recordaudio():
         print("You said: " + data)
 
     except sr.UnknownValueError:
-        speak("your voice is not cleared  please write the given input")
-        print("Google Speech Recognition could not understand audio")
+        speak("Voice not clear please write the given input")
+        print("Google Speech Recognition could not understand the audio")
     except sr.RequestError as e:
         print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
@@ -60,7 +60,7 @@ while 1:
     if choice == 1:
         df = pd.DataFrame(columns=['menu', 'price'])
         list1 = ["samosa", "omlette", "veg garlic bread", "upma", "parantha", "veg thali", " non veg thali",
-                 "makhan kadi", "roti", "naan", "shahi panner", "gulab zamun", "barfi", "dal makhni", "non veg chicken"]
+                 "makhan kadi", "roti", "naan", "shahi panner", "gulab jamun", "barfi", "dal makhni", "non veg chicken"]
         list2 = [27.6, 28.0, 28.3, 27.85, 29.95, 28.0, 27.4, 28.0, 28.0, 28.5, 28.9, 28.45, 29.6, 27.85, 27.1]
         if len(list1) == len(list2):
             for i in range(len(list1)):
@@ -92,11 +92,11 @@ while 1:
                 self.data1 = data  # change the values
                 print("open menu")
                 print(self.data1)
-                speak("what do you like ")
+                speak("what would you like? ")
                 speak("breakfast")
                 speak("lunch")
                 speak("dinner")
-                print("what do you like ")
+                print("what would you like ")
                 print("[1]=breakfast")
                 print("[2]=lunch")
                 print("[3]=dinner")
@@ -210,7 +210,7 @@ while 1:
                         print(pay)
                         speak(str(pay))
                         speak("sir your payable amount is")
-                        speak("sir please give the ratings of food")
+                        speak("sir please give the ratings for food")
                         speak("humei bhut khushi milegi")
 
                         for i in list:
